@@ -12,4 +12,21 @@
     <PackageReference Include="Whisper.net.Runtime" Version="1.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/"/>
+    <None Include="../LICENSE" Pack="true" PackagePath="/"/>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageId>SharpSpeech</PackageId>
+    <Version>1.0.3</Version>
+    <Authors>Adisol</Authors>
+    <RepositoryUrl>https://github.com/Adisol07/SharpSpeech.git</RepositoryUrl> 
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>SharperPortAudio;Whisper;Whisper.net;Speech;Speech Recognition;Wake Word;Wake Word Recognition</PackageTags>
+    <Description>SharpSpeech is free, local and open source way to speech and wake word recognition.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
 </Project>
