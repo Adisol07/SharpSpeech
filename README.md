@@ -14,3 +14,6 @@ It uses [SharperPortAudio](https://github.com/Adisol07/SharperPortAudio) for cro
  - [ ] Better memory handling
  - [ ] Better voice coverage
  - [ ] Implement more intuitive way to autostop speech recognition
+ - [ ] Multilingual support
+ - [ ] Automatic translation between languages
+ - [ ] Completly progressive speech to text
