@@ -20,6 +20,7 @@ public static class Whisper
         processor = whisperFactory.CreateBuilder()
             .WithLanguage(language)
             .WithPrintResults()
+            .WithNoSpeechThreshold(0.19f)
             .Build();
         initialized = true;
     }

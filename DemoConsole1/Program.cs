@@ -7,7 +7,7 @@ internal class Program
     public static void Main(string[] args)
     {
         Console.WriteLine("Loading wake word..");
-        WakeWordRecognition wakeWordRecognition = new WakeWordRecognition(["Hey"], "./ggml.bin");
+        WakeWordRecognition wakeWordRecognition = new WakeWordRecognition(["Hello"], "./ggml.bin");
         wakeWordRecognition.Recognized += (wakeWord) =>
         {
             Console.ForegroundColor = ConsoleColor.Green;
