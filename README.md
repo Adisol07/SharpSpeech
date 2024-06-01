@@ -1,6 +1,6 @@
 # SharpSpeech
 SharpSpeech is free, local and open source way to speech and wake word recognition. \
-Latest version: 1.0.3 \
+Latest version: 1.0.4 \
 NuGet: https://www.nuget.org/packages/SharpSpeech/ \
 Wiki: Coming Soon
 
@@ -17,3 +17,4 @@ It uses [SharperPortAudio](https://github.com/Adisol07/SharperPortAudio) for cro
  - [ ] Multilingual support
  - [ ] Automatic translation between languages
  - [ ] Completly progressive speech to text
+ - [ ] Better no speech threshold

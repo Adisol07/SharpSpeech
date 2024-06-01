@@ -19,7 +19,7 @@
 
   <PropertyGroup>
     <PackageId>SharpSpeech</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>Adisol</Authors>
     <RepositoryUrl>https://github.com/Adisol07/SharpSpeech.git</RepositoryUrl> 
     <RepositoryType>git</RepositoryType>
