@@ -9,13 +9,15 @@ public static class Whisper
     private static bool initialized = false;
 
     public static string? ModelFile { get; private set; } = "";
+    public static string? Language { get; private set; } = "";
 
-    public static void Initialize(string modelFile, string language = "auto")
+    public static void Initialize(string modelFile, string language = "auto", GgmlType modelType = GgmlType.Base)
     {
         if (initialized) return;
 
+        Language = language;
         ModelFile = modelFile;
-        DownloadModel(modelFile, GgmlType.Base);
+        DownloadModel(modelFile, modelType);
         WhisperFactory whisperFactory = WhisperFactory.FromPath(ModelFile!);
         processor = whisperFactory.CreateBuilder()
             .WithLanguage(language)
@@ -28,10 +30,16 @@ public static class Whisper
     public static async Task<List<string>> Process(byte[] soundData)
     {
         if (processor == null)
-            throw new InvalidOperationException("Whisper processor isn't initialized! Call Initialize method first.");
-
-        await DisposeProcessor();
-        Initialize(ModelFile!, "en");
+        {
+            if (!initialized)
+                throw new InvalidOperationException("Whisper processor isn't initialized! Call Initialize method first.");
+            Initialize(ModelFile!, Language!);
+        }
+        else
+        {
+            await DisposeProcessor();
+            Initialize(ModelFile!, Language!);
+        }
 
         using Stream stream = new MemoryStream(soundData);
 

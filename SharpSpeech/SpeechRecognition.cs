@@ -1,5 +1,6 @@
 using System;
 using SharperPortAudio;
+using Whisper.net.Ggml;
 
 namespace SharpSpeech;
 
@@ -15,9 +16,9 @@ public class SpeechRecognition
 
     public SpeechRecognition()
     { }
-    public SpeechRecognition(string modelFile)
+    public SpeechRecognition(string modelFile, string language = "en", GgmlType modelType = GgmlType.Base)
     {
-        Whisper.Initialize(modelFile, "en");
+        Whisper.Initialize(modelFile, language, modelType);
     }
 
     public void Listen() => Listen(Device.DefaultInputDevice);

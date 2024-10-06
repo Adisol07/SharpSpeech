@@ -1,5 +1,6 @@
 using System;
 using SharperPortAudio;
+using Whisper.net.Ggml;
 
 namespace SharpSpeech;
 
@@ -18,10 +19,10 @@ public class WakeWordRecognition
     {
         WakeWords = wakeWords.ToList();
     }
-    public WakeWordRecognition(string[] wakeWords, string modelFile)
+    public WakeWordRecognition(string[] wakeWords, string modelFile, string language = "en", GgmlType modelType = GgmlType.Base)
     {
         WakeWords = wakeWords.ToList();
-        Whisper.Initialize(modelFile, "en");
+        Whisper.Initialize(modelFile, language, modelType);
     }
 
     public void Listen() => Listen(Device.DefaultInputDevice);
